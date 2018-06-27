@@ -123,7 +123,7 @@ function endGame() {
   ROCKS.forEach(function(rock) {
     rock.remove();
   });
-  alert("YOU LOSE!")
+  return ("YOU LOSE!")
 }
 
 function moveDodger(e) {
