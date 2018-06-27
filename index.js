@@ -77,10 +77,10 @@ function createRock(x) {
     function rockmove() {
       rock.style.top = `{$top += 2}px`;
       if (top < 400) {
-        window.requestAnimationFrame(rockmove());
+        window.requestAnimationFrame(rockmove);
       }
     }
-    window.requestAnimationFrame(rockmove());
+    window.requestAnimationFrame(rockmove);
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
