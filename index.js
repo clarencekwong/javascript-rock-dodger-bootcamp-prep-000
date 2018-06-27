@@ -125,7 +125,7 @@ function endGame() {
   });
   document.removeEventListener('keydown', moveDodger)
 
-  START.innerHTML = 'Play again?'
+  START.innerHTML = 'Replay'
   START.style.display = 'inline'
   return alert("YOU LOSE!")
 }
