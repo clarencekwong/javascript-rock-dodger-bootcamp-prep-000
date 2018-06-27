@@ -74,7 +74,7 @@ function createRock(x) {
    */
   function moveRock(rock) {
     // implement me!
-    function rockmove() {
+    function rockmove(rock) {
       rock.style.top = `{$top += 2}px`;
       if (top < 400) {
         window.requestAnimationFrame(rockmove);
