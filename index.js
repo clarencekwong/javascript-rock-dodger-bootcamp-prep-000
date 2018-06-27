@@ -66,7 +66,7 @@ function createRock(x) {
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
-
+  GAME.append(rock);
 
   /**
    * This function moves the rock. (2 pixels at a time
@@ -74,6 +74,13 @@ function createRock(x) {
    */
   function moveRock() {
     // implement me!
+    function rockmove() {
+      rock.style.top = `{$top += 2}px`;
+      if (top < 400) {
+        window.requestAnimationFrame(rockmove);
+      }
+    }
+    window.requestAnimationFrame(rockmove);
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
@@ -119,6 +126,20 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
+
+  if ([LEFT_ARROW, RIGHT_ARROW].indexOf(e.which) > -1) {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+
+  if (e.which === LEFT_ARROW) {
+    moveDodgerLeft();
+    console.log('left')
+  }
+  if (e.which === RIGHT_ARROW) {
+    moveDodgerRight();
+    console.log('right')
+  }
 }
 
 function moveDodgerLeft() {
@@ -127,6 +148,15 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+  function leftstep() {
+    var leftNumbers = DODGER.style.left.replace('px', '');
+    var left = parseInt(leftNumbers, 10);
+   
+    if (left > 0) {
+      DODGER.style.left = `${left - 4}px`;
+    }
+  }
+  window.requestAnimationFrame(leftstep);
 }
 
 function moveDodgerRight() {
@@ -135,6 +165,15 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
+  function rightstep() {
+    var rightNumbers = DODGER.style.left.replace('px', '');
+    var right = parseInt(rightNumbers, 10);
+   
+    if (right < 360) {
+      DODGER.style.left = `${right + 4}px`;
+    }
+  }
+  window.requestAnimationFrame(rightstep);
 }
 
 /**
