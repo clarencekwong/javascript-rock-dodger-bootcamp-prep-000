@@ -81,6 +81,7 @@ function createRock(x) {
     } else {
       rock.remove()
     }
+  }
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
