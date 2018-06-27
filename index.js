@@ -70,7 +70,7 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
-  function moveRock(rock) {
+  function moveRock() {
     // implement me!
     rock.style.top = `${top += 2}px`;
     if (top < GAME_HEIGHT) {
