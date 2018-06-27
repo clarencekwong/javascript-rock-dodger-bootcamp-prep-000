@@ -123,7 +123,11 @@ function endGame() {
   ROCKS.forEach(function(rock) {
     rock.remove();
   });
-  return ("YOU LOSE!")
+  document.removeEventListener('keydown', moveDodger)
+
+  START.innerHTML = 'Play again?'
+  START.style.display = 'inline'
+  return alert("YOU LOSE!")
 }
 
 function moveDodger(e) {
